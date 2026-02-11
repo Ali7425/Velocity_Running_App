@@ -9,14 +9,28 @@
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.velocity.app",
+      "buildNumber": "1",
+      "deploymentTarget": "15.1",
+      "infoPlist": {
+        "NSLocationWhenInUseUsageDescription": "Velocity needs access to your location to track your running activities.",
+        "NSLocationAlwaysAndWhenInUseUsageDescription": "Velocity needs access to your location to track your running activities even when the app is in the background."
+      }
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "edgeToEdgeEnabled": true
+      "edgeToEdgeEnabled": true,
+      "package": "com.velocity.app",
+      "versionCode": 1,
+      "permissions": [
+        "ACCESS_FINE_LOCATION",
+        "ACCESS_COARSE_LOCATION",
+        "ACCESS_BACKGROUND_LOCATION"
+      ]
     },
     "web": {
       "bundler": "metro",
