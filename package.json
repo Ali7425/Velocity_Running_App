@@ -3,12 +3,13 @@
   "main": "expo-router/entry",
   "version": "1.0.0",
   "scripts": {
-    "start": "export EXPO_PUBLIC_API_URL=http://$(ipconfig getifaddr en0):8000 && npx expo start",
+    "start": "./update-ip.sh && expo start",
     "reset-project": "node ./scripts/reset-project.js",
-    "android": "expo start --android",
-    "ios": "expo start --ios",
-    "web": "expo start --web",
+    "android": "./update-ip.sh && expo start --android",
+    "ios": "./update-ip.sh && expo start --ios",
+    "web": "./update-ip.sh && npx expo start --web",
     "lint": "expo lint"
+    
   },
   "dependencies": {
     "@expo/vector-icons": "^14.1.0",

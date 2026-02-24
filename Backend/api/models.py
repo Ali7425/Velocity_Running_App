@@ -2,7 +2,17 @@ from django.db import models  # type: ignore[import]
 from django.contrib.auth.models import AbstractUser  # type: ignore[import]
 
 class User(AbstractUser):
-    pass
+    # Add these fields to resolve the (fields.E304) errors
+    groups = models.ManyToManyField(
+        'auth.Group',
+        related_name='api_user_groups',  # Makes the reverse accessor unique
+        blank=True,
+    )
+    user_permissions = models.ManyToManyField(
+        'auth.Permission',
+        related_name='api_user_permissions',  # Makes the reverse accessor unique
+        blank=True,
+    )
 
 class Run(models.Model):
      # This creates a many-to-one relationship.
